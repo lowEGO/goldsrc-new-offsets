@@ -1,0 +1,11 @@
+			void FindPoint(float *point, int screenwidth, int screenheight, int degrees)
+			{
+				float x2 = screenwidth / 2;
+				float y2 = screenheight / 2;
+
+				float d = sqrt(pow((point[0] - x2), 2) + (pow((point[1] - y2), 2))); //distancia
+				float r = degrees / d; //seguimento
+
+				point[0] = r * point[0] + (1 - r) * x2; //achar a divisao do seguimento
+				point[1] = r * point[1] + (1 - r) * y2; //ratio (1-r):r
+			}
